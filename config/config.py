@@ -14,8 +14,18 @@ DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_PORT = os.getenv("DB_PORT", "5432")
 DB_NAME = os.getenv("DB_NAME", "weather_db")
 
-# SQLAlchemy connection string (supports full URL or individual components)
-_raw_db_url = os.getenv("DATABASE_URL")
+# SQLAlchemy connection string (supports Streamlit secrets, full URL, or individual components)
+_raw_db_url = None
+try:
+    import streamlit as st
+    if hasattr(st, "secrets") and "DATABASE_URL" in st.secrets:
+        _raw_db_url = st.secrets["DATABASE_URL"]
+except Exception:
+    pass
+
+if not _raw_db_url:
+    _raw_db_url = os.getenv("DATABASE_URL")
+
 if _raw_db_url:
     if _raw_db_url.startswith("postgresql://"):
         DATABASE_URL = _raw_db_url.replace("postgresql://", "postgresql+psycopg2://", 1)
