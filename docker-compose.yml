@@ -1,0 +1,36 @@
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: weather_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: weather_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d weather_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Optional web-based GUI to inspect tables visually (at http://localhost:8080)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: weather_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
