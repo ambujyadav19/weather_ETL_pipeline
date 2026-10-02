@@ -1,7 +1,7 @@
 # 🌤️ Global Weather Telemetry ETL Pipeline & Analytics Dashboard
 
-[![Daily Weather ETL Pipeline](https://github.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/weather-etl-pipeline/actions/workflows/daily_etl.yml/badge.svg)](https://github.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/weather-etl-pipeline/actions/workflows/daily_etl.yml)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://REPLACE_WITH_YOUR_STREAMLIT_URL.streamlit.app)
+[![Daily Weather ETL Pipeline](https://github.com/ambujyadav19/weather-ETL-pipeline/actions/workflows/daily_etl.yml/badge.svg)](https://github.com/ambujyadav19/weather-ETL-pipeline/actions/workflows/daily_etl.yml)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://weatheretlpipelinebyambuj.streamlit.app/)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
@@ -15,7 +15,7 @@ Automated to execute daily via **GitHub Actions** and stored in serverless cloud
 
 ## 🌐 Live Interactive Web Dashboard
 
-👉 **[Click Here to Open the Live Dashboard](https://REPLACE_WITH_YOUR_STREAMLIT_URL.streamlit.app)**  
+👉 **[Click Here to Open the Live Dashboard](https://weatheretlpipelinebyambuj.streamlit.app/)**  
 *(Explore temperature trends, rain volume forecasts, wind speeds, and download exported CSV datasets directly in your browser).*
 
 ---
